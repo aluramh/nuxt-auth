@@ -5,8 +5,13 @@ const user = require("../models/user");
 // Get the current user's session.
 router.get("/", async (req, res, next) => {
   try {
-    const data = await user.getUser("-HWxC3twUx1iVI8N04xT89L");
-    res.send(data);
+    const fakeUser = {
+      name: "TextTrackList",
+      type: "test",
+      id: 1
+    };
+
+    res.send(fakeUser);
   } catch (e) {
     console.error(e);
     next(e);

@@ -16,8 +16,7 @@
       "sourceMaps": true,
       "env": {
         "NODE_ENV": "development",
-        "DEBUG": "nuxt:*,app",
-        "API_URL_BROWSER": "http://35.192.139.25"
+        "DEBUG": "nuxt:*,app"
       }
     }
   ]

@@ -13,8 +13,18 @@ router.get(
   "/user",
   passport.authenticate("jwt", { session: false }),
   async (req, res, next) => {
-    // TO-DO: Filter out fields from the user. Use allowedFields(?)
-    return res.send({ user: req.user.value });
+    try {
+      const fakeUser = {
+        name: "TextTrackList",
+        type: "test",
+        id: 1
+      };
+
+      // TO-DO: Filter out fields from the user. Use allowedFields(?)
+      return res.send({ user: fakeUser });
+    } catch (e) {
+      next(e);
+    }
   }
 );
 

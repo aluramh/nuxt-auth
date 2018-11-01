@@ -17,9 +17,9 @@
         <InputField v-model="password" placeholder="Password" type="password" class="w-100 mb-2" />
         <InputField v-model="passwordConfirm" placeholder="Confirm password" type="password" class="w-100 mb-2" />
 
-        <Button class="w-100">
+        <button class="w-100">
           Sign up
-        </Button>
+        </button>
       </form>
     </Jumbotron>
 
@@ -31,14 +31,12 @@
 
 <script>
 import InputField from "@/components/shared/Input";
-import Button from "@/components/shared/Button";
 import Jumbotron from "@/components/shared/Jumbotron";
 
 export default {
   middleware: ["login-redirect"],
   components: {
     InputField,
-    Button,
     Jumbotron
   },
   data() {

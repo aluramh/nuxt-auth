@@ -7,8 +7,7 @@ const host = process.env.HOST || "0.0.0.0";
 const allowedOrigins = [
   `http://localhost:${port}`,
   `http://127.0.0.1:${port}`,
-  `http://${host}:${port}`,
-  "http://35.192.139.25"
+  `http://${host}:${port}`
 ];
 
 module.exports = (req, res, next) => {
