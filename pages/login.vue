@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import InputField from "@/components/shared/Input";
-import Button from "@/components/shared/Button";
+import InputField from "@/components/inputs/LoginInput";
+import Button from "@/components/inputs/LoginButton";
 import Jumbotron from "@/components/shared/Jumbotron";
 
 export default {

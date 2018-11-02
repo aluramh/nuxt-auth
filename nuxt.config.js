@@ -13,12 +13,12 @@ module.exports = {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Hind"
+        href: "https://fonts.googleapis.com/css?family=Hind:400,500,600"
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons"
       }
-    ],
-    script: [
-      // { src: "/js/ionicons.js", body: true },
-      { src: "https://unpkg.com/ionicons/dist/ionicons.js", body: true }
     ]
   },
   /*

@@ -1,14 +1,25 @@
 <template>
-  <button class="registria__button">
+  <button class="registria__button" v-on="inputListeners">
     <slot />
   </button>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    inputListeners() {
+      return {
+        ...this.$listeners,
+        input(event) {
+          this.$emit("input", event.target.value);
+        }
+      };
+    }
+  }
+};
 </script>
 
-<style>
+<style lang="scss">
 .registria__button {
   min-width: 140px;
   height: 35px;
@@ -19,5 +30,10 @@ export default {};
   font-weight: 700;
   border: none;
   border-radius: 2px;
+  cursor: pointer;
+  transition: 200ms background-color;
+  &:hover {
+    background-color: rgb(39, 144, 182);
+  }
 }
 </style>

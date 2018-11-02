@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar__item d-flex justify-content-between">
     <span><slot /></span>
-    <ion-icon name="ios-arrow-forward"></ion-icon>
+    <i class="material-icons">keyboard_arrow_right</i>
   </div>
 </template>
 

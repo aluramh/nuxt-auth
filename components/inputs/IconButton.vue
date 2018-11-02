@@ -1,5 +1,9 @@
 <template>
-  <button class="registria__icon-button" :style="{ height: size, width: size }">
+  <button 
+    :style="{ height: size, width: size }" 
+    class="registria__icon-button"
+    v-on="inputListeners"
+  >
     <span class="d-flex justify-content-center">
       <slot class="align-self-center" />
     </span>
@@ -8,10 +12,21 @@
 
 <script>
 export default {
+  name: "IconButton",
   props: {
     size: {
       type: String,
       default: "35px"
+    }
+  },
+  computed: {
+    inputListeners() {
+      return {
+        ...this.$listeners,
+        input(event) {
+          this.$emit("input", event.target.value);
+        }
+      };
     }
   }
 };
@@ -26,7 +41,7 @@ export default {
   transition: 200ms background-color;
   cursor: pointer;
   &:hover {
-    background-color: lightgray;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 </style>
