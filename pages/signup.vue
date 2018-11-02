@@ -1,7 +1,7 @@
 <template>
   <div class="login__container container py-3">
     <Jumbotron class="mb-3">
-      <h2 class="text-center">Swap</h2>
+      <h2 class="text-center">Registria</h2>
       
       <div class="text-center">
         <p>

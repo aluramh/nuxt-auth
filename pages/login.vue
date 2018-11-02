@@ -1,7 +1,7 @@
 <template>
   <div class="login__container container py-3">
     <Jumbotron>
-      <h2 class="text-center">Swap</h2>
+      <h2 class="text-center">Registria</h2>
 
       <form @submit.prevent="handleFormSubmission">
         <InputField v-model="username" placeholder="Email or username" type="email" class="w-100 mb-2" />
@@ -29,8 +29,8 @@ export default {
   },
   data() {
     return {
-      username: "swaptest@email.com",
-      password: "swap123",
+      username: "test@email.com",
+      password: "test123",
       token: ""
     };
   },

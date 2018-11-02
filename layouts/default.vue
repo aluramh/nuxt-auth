@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="App__background py-4">
+    <div class="App__background">
       <nuxt />
     </div>
     <Footer />
@@ -21,13 +21,11 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Nunito");
-
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Hind", sans-serif;
 }
 
 .App__background {
-  background-color: #fafafa;
+  background-color: rgb (247, 248, 250);
 }
 </style>
