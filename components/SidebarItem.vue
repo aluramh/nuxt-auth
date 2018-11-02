@@ -1,21 +1,11 @@
 <template>
   <div class="sidebar__item d-flex justify-content-between">
-    <span>
-      <slot />
-    </span>
-
-    <span>v</span>
-    <!-- <ArrowForward /> -->
-
-    <!-- <ArrowForward />
-    <AlertIcon /> -->
+    <span><slot /></span>
+    <ion-icon name="ios-arrow-forward"></ion-icon>
   </div>
 </template>
 
 <script>
-import ArrowForward from "vue-ionicons/dist/ios-arrow-forward.vue";
-// require("vue-ionicons/ionicons.css");
-console.log({ ArrowForward });
 export default {
   components: {
     // ArrowForward

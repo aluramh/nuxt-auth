@@ -15,8 +15,11 @@ module.exports = {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Hind"
       }
+    ],
+    script: [
+      // { src: "/js/ionicons.js", body: true },
+      { src: "https://unpkg.com/ionicons/dist/ionicons.js", body: true }
     ]
-    // <link href="" rel="stylesheet">
   },
   /*
   ** Global CSS

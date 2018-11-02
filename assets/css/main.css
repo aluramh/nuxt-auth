@@ -1,5 +1,5 @@
-html, body
-{
+html,
+body {
   background-color: #fff;
   color: #000;
   letter-spacing: 0.5px;
@@ -8,16 +8,18 @@ html, body
   margin: 0;
 }
 
-footer
-{
+footer {
   padding: 20px;
   text-align: center;
   border-top: 1px solid #ddd;
 }
 
-a, a:hover, a:focus, a:visited
-{
+a,
+a:hover,
+a:focus,
+a:visited {
   color: #000;
+  text-decoration: none;
 }
 
 .logo {
