@@ -21,11 +21,6 @@ export default {
 </script>
 
 <style>
-body {
-  font-family: "Hind", sans-serif;
-  background-color: rgb(247, 248, 250);
-}
-
 .App__background {
   background-color: rgb (247, 248, 250);
 }

@@ -17,7 +17,7 @@
 
 <script>
 import InputField from "@/components/inputs/LoginInput";
-import Button from "@/components/inputs/LoginButton";
+import Button from "@/components/inputs/Button";
 import Jumbotron from "@/components/shared/Jumbotron";
 
 export default {

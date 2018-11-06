@@ -25,15 +25,11 @@ import axios from "~/plugins/axios";
 
 export default {
   name: "UserProfilePage",
-  asyncData({ params, error }) {
-    return axios
-      .get(`/api/users/${params.id}`)
-      .then(res => {
-        return { user: res.data };
-      })
-      .catch(e => {
-        error({ statusCode: 404, message: "User not found" });
-      });
+  async asyncData({ params, error }) {
+    const user = await axios.get(`/api/users/${params.id}`).catch(e => {
+      error({ statusCode: 404, message: "User not found" });
+    });
+    return { user: res.data };
   },
   head() {
     return {

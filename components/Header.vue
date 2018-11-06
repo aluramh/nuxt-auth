@@ -6,11 +6,9 @@
       <b-navbar-brand class="App__brand" to="/">Registria</b-navbar-brand>
 
       <b-collapse id="nav_collapse" is-nav>
-        <!-- <b-navbar-nav v-if="$auth.loggedIn" class="App__navbar">
-          <b-nav-item to="/contacts">Contacts</b-nav-item>
-          <b-nav-item href="#">Link #2</b-nav-item>
-          <b-nav-item href="#">Link #3</b-nav-item>
-        </b-navbar-nav> -->
+        <b-navbar-nav v-if="$auth.loggedIn" class="App__navbar">
+          <b-nav-item to="/brand/management">Brand</b-nav-item>
+        </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
@@ -18,9 +16,9 @@
             <b-nav-item-dropdown right>
               <!-- Using button-content slot -->
               <template slot="button-content">
-                User
+                Admin
               </template>
-              <b-dropdown-item to="/profile">Profile</b-dropdown-item>
+              <!-- <b-dropdown-item to="/profile">Profile</b-dropdown-item> -->
               <b-dropdown-item @click="handleLogout">Sign out</b-dropdown-item>
             </b-nav-item-dropdown>
           </template>

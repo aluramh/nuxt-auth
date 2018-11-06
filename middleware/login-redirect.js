@@ -5,7 +5,7 @@ const loginRedirect = ({ app, redirect }) => {
   if (app.$auth.loggedIn) {
     // Since this is executed server-side, use "redirect()"
     // instead of $router.push()
-    redirect("/profile");
+    redirect("/brand/management");
   }
 };
 

@@ -3,11 +3,15 @@
     <Sidebar>
       <template slot="sidebar">
         <nuxt-link to="/brand/management">
-          <SidebarItem>Brand management</SidebarItem>
+          <SidebarItem :active="$route.path === '/brand/management'">
+            Brand management
+          </SidebarItem>
         </nuxt-link>
 
         <nuxt-link to="/brand/requests">
-          <SidebarItem>Brand requests</SidebarItem>
+          <SidebarItem :active="$route.path === '/brand/requests'">
+            Brand requests
+          </SidebarItem>
         </nuxt-link>
         
         <!-- Any additional content could go in this slot. -->

@@ -20,10 +20,14 @@ export default {
 </script>
 
 <style lang="scss">
+$start: rgb(70, 173, 236);
+$end: rgb(77, 211, 201);
+
 .registria__button {
   min-width: 140px;
   height: 35px;
-  background-color: rgb(70, 176, 216);
+  background-image: linear-gradient(to right, $start, $end);
+
   color: white;
   font-size: 12px;
   font-family: Helvetica, sans-serif;
@@ -33,7 +37,7 @@ export default {
   cursor: pointer;
   transition: 200ms background-color;
   &:hover {
-    background-color: rgb(39, 144, 182);
+    // background-color: $buttonColorHover;
   }
 }
 </style>

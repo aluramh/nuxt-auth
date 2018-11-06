@@ -1,5 +1,8 @@
 <template>
-  <div class="sidebar__item d-flex justify-content-between">
+  <div
+    :class="active && 'sidebar__item--active'"
+    class="sidebar__item d-flex justify-content-between"
+  >
     <span><slot /></span>
     <i class="material-icons">keyboard_arrow_right</i>
   </div>
@@ -7,8 +10,11 @@
 
 <script>
 export default {
-  components: {
-    // ArrowForward
+  props: {
+    active: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>
@@ -21,7 +27,8 @@ export default {
   padding: 15px 24px 15px 34px;
   transition: 250ms background-color;
 
-  &:hover {
+  &:hover,
+  &--active {
     background-color: rgb(197, 202, 215);
     font-weight: bold;
     cursor: pointer;

@@ -59,7 +59,7 @@ module.exports = {
       // logout: User will be redirected to this path if after logout, current route is protected.
       logout: "/",
       // home: User will be redirect to this path after login. (rewriteRedirects will rewrite this path)
-      home: "/profile",
+      home: "/brand/management",
       // callback: User will be redirect to this path by the identity provider after login.
       // (Should match configured Allowed Callback URLs (or similar setting) in your app/client
       // with the identity provider)
