@@ -3,18 +3,7 @@
     <Management>
       <template slot="content">
         <div>
-          <div class="brand__toolbar mb-3">
-            <div class="d-flex align-self-center">
-              <IconButton size="35px" class="mr-1">
-                <i class="material-icons">sync</i>
-              </IconButton>
-
-              <span :style="{ opacity: 0.43 }" class="align-self-center">
-                Last Updated October 18, 2017
-              </span>
-            </div>
-            <Button>Create new brand</Button>
-          </div>
+          <BrandToolbar />
 
           <div>
             <Table class="w-100">
@@ -48,9 +37,8 @@
 
 <script>
 import Management from "@/components/shared/ManagementLayout";
+import BrandToolbar from "@/components/BrandToolbar";
 import SidebarItem from "@/components/SidebarItem";
-import Button from "@/components/inputs/Button";
-import IconButton from "@/components/inputs/IconButton";
 import Checkbox from "@/components/inputs/Checkbox";
 import {
   Table,
@@ -63,9 +51,8 @@ import {
 export default {
   components: {
     Management,
+    BrandToolbar,
     SidebarItem,
-    Button,
-    IconButton,
     Checkbox,
     Table,
     TableHead,

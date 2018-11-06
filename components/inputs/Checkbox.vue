@@ -38,7 +38,26 @@ export default {
 </script>
 
 <style lang="scss">
+$borderColor: rgb(151, 151, 151);
+$activeColor: rgb(70, 176, 216);
+
 .registria__checkbox {
   margin: 0 !important;
+
+  &.custom-control {
+    .custom-control-label {
+      &:before {
+        border-radius: 2px;
+        border: 1px solid $borderColor !important;
+        background-color: transparent;
+        border: 1px solid black;
+      }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+      background-color: $activeColor;
+      border-color: $activeColor !important;
+    }
+  }
 }
 </style>
