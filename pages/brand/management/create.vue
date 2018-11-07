@@ -22,8 +22,10 @@
           <Container class="w-100">
             <div slot="body" class="p-4">
               <div class="d-flex flex-row justify-content-around">
-                <RadioButton>Participating brand</RadioButton>
-                <RadioButton>Other brand</RadioButton>
+                <b-form-radio-group v-model="brandType">
+                  <b-form-radio value="part">Participating brand</b-form-radio>
+                  <b-form-radio value="other">Other brand</b-form-radio>
+                </b-form-radio-group>
               </div>   
               
               <div class="my-3" :style="{ borderTop: '1px solid #e9e9eb' }"/>
@@ -40,18 +42,17 @@ import Management from "@/components/shared/ManagementLayout";
 import IconButton from "@/components/inputs/IconButton";
 import Checkbox from "@/components/inputs/Checkbox";
 import Container from "@/components/Container";
-import RadioButton from "@/components/inputs/RadioButton";
 
 export default {
   components: {
     Management,
     IconButton,
     Checkbox,
-    Container,
-    RadioButton
+    Container
   },
   data() {
     return {
+      brandType: null,
       sample: {
         Name: "Brand #1",
         Address: `120 Private Drive \nDenver, Colorado\n98765 USA`,

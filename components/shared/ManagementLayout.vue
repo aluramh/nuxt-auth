@@ -3,13 +3,13 @@
     <Sidebar>
       <template slot="sidebar">
         <nuxt-link to="/brand/management">
-          <SidebarItem :active="$route.path === '/brand/management'">
+          <SidebarItem :active="$route.path.includes('/brand/management')">
             Brand management
           </SidebarItem>
         </nuxt-link>
 
         <nuxt-link to="/brand/requests">
-          <SidebarItem :active="$route.path === '/brand/requests'">
+          <SidebarItem :active="$route.path.includes('/brand/requests')">
             Brand requests
           </SidebarItem>
         </nuxt-link>

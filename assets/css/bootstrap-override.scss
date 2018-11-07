@@ -1,0 +1,9 @@
+.custom-radio {
+  .custom-control-label::before {
+    background-color: rgb(233, 237, 243) !important;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: url("../img/circle.svg") !important;
+  }
+}

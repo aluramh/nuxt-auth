@@ -9,7 +9,9 @@
         Last Updated October 18, 2017
       </span>
     </div>
-    <Button>Create new brand</Button>
+    <nuxt-link to="/brand/management/create">
+      <Button>Create new brand</Button>
+    </nuxt-link>
   </div>
 </template>
 
