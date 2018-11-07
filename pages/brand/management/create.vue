@@ -2,9 +2,14 @@
   <div>
     <Management>
       <template slot="content">
+        <Breadcrumbs 
+          :items="[
+            { text: 'Brand', to: '/brand' },
+            { text: 'Brand management', to: '/brand/management' },
+            { text: 'Create new brand', active: true }
+          ]"
+        />
         <div>
-          <div class="mb-4">Brand management > Create a brand</div>
-
           <h4 class="mb-0">{{ sample['Name'] }}</h4>
           <div class="mb-3">Other brand</div>
           
@@ -80,6 +85,7 @@ import IconButton from "@/components/inputs/IconButton";
 import Checkbox from "@/components/inputs/Checkbox";
 import ToggleButton from "@/components/inputs/ToggleButton";
 import Button from "@/components/inputs/Button";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default {
   components: {
@@ -88,7 +94,8 @@ export default {
     Checkbox,
     Container,
     ToggleButton,
-    Button
+    Button,
+    Breadcrumbs
   },
   data() {
     return {

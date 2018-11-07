@@ -2,33 +2,37 @@
   <div>
     <Management>
       <template slot="content">
-        <div>
-          <BrandToolbar />
+        <Breadcrumbs 
+          :items="[
+            { text: 'Brand', to: '/brand' },
+            { text: 'Brand management', active: true },
+          ]"
+        />
+        <BrandToolbar />
 
-          <div>
-            <Table class="w-100">
-              <TableHead>
-                <TableRow>
-                  <Cell inHeader class="table__checkboxes">{{ "" }}</Cell>
-                  <Cell inHeader>Name</Cell>
-                  <Cell inHeader>Requested by</Cell>
-                  <Cell inHeader>Date</Cell>
-                  <Cell inHeader>Status</Cell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow v-for="(row, index) in data" :key="index">
-                  <Cell class="table__checkboxes">
-                    <Checkbox :id="`${index}-checkbox`" @onChange="handleCheckboxChange" />
-                  </Cell>
-                  <Cell>{{ row.name }}</Cell>
-                  <Cell>{{ row.requested }}</Cell>
-                  <Cell>{{ row.date }}</Cell>
-                  <Cell>{{ row.status }}</Cell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
+        <div>
+          <Table class="w-100">
+            <TableHead>
+              <TableRow>
+                <Cell inHeader class="table__checkboxes">{{ "" }}</Cell>
+                <Cell inHeader>Name</Cell>
+                <Cell inHeader>Requested by</Cell>
+                <Cell inHeader>Date</Cell>
+                <Cell inHeader>Status</Cell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow v-for="(row, index) in data" :key="index">
+                <Cell class="table__checkboxes">
+                  <Checkbox :id="`${index}-checkbox`" @onChange="handleCheckboxChange" />
+                </Cell>
+                <Cell>{{ row.name }}</Cell>
+                <Cell>{{ row.requested }}</Cell>
+                <Cell>{{ row.date }}</Cell>
+                <Cell>{{ row.status }}</Cell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
       </template>
     </Management>
@@ -47,6 +51,7 @@ import {
   TableRow,
   TableCell as Cell
 } from "@/components/table";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default {
   components: {
@@ -58,7 +63,8 @@ export default {
     TableHead,
     TableBody,
     TableRow,
-    Cell
+    Cell,
+    Breadcrumbs
   },
   data() {
     return {
