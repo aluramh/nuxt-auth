@@ -10,7 +10,7 @@ module.exports = {
       { hid: "description", name: "description", content: "Registria mobile" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon32x32.png" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Hind:400,500,600"
