@@ -13,11 +13,17 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <template v-if="$auth.loggedIn">
-            <b-nav-item-dropdown right>
+            <UniversalSearch class="align-self-center mx-3"/>
+
+            <div :style="styles.divider"/>
+            
+            <b-nav-item-dropdown right class="dropdown__toggle">
               <!-- Using button-content slot -->
-              <template slot="button-content">
+              <div slot="button-content" class="d-flex flex-row mx-4">
+                <span :style="styles.circle" />
                 Admin
-              </template>
+                <i class="material-icons">arrow_drop_down</i>
+              </div>
               <!-- <b-dropdown-item to="/profile">Profile</b-dropdown-item> -->
               <b-dropdown-item @click="handleLogout">Sign out</b-dropdown-item>
             </b-nav-item-dropdown>
@@ -33,7 +39,29 @@
 </template>
 
 <script>
+import UniversalSearch from "@/components/inputs/UniversalSearch";
+
+const styles = {
+  circle: {
+    borderRadius: "20px",
+    height: "20px",
+    width: "20px",
+    backgroundColor: "white",
+    opacity: 0.29,
+    marginRight: "0.75rem"
+  },
+  divider: {
+    borderLeft: "1px solid white"
+  }
+};
+
 export default {
+  components: {
+    UniversalSearch
+  },
+  data() {
+    return { styles };
+  },
   methods: {
     async handleLogout() {
       this.$auth.logout();
