@@ -2215,7 +2215,7 @@ cosmiconfig@^5.0.0:
     js-yaml "^3.9.0"
     parse-json "^4.0.0"
 
-couchbase@^2.5.1:
+couchbase@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/couchbase/-/couchbase-2.6.0.tgz#673ab2d02acc4bbfcb0493162386b6e631a03e54"
   integrity sha512-fvVWug4G8q4T/nYtiMVg8D5wwb3lacpj41gbK1iqQ/x7U2cRXAYINblD/82bfm13XiZmEgze0agXjUIWGpZgwg==

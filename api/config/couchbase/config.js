@@ -1,20 +1,26 @@
-// . In a typical application, you would create a single, static Cluster object
-// that would live for the duration of the application or the process’s lifetime.
-// Create the Cluster object when the application starts and call it Dispose
-// method when the application shuts down.
-// https://developer.couchbase.com/documentation/server/4.0/sdks/dotnet-2.2/closing-connections.html
+var couchbase = require("couchbase");
 
-// NOTE: TO-DO: May need to make this a global variables useable by all during the whole
-// server uptime.
+// Create a cluster with authenticated credentials
+var cluster = new couchbase.Cluster("couchbase://localhost:8091");
+cluster.authenticate("root", "password");
 
-const couchbase = require("couchbase");
+// Reusable function for oppening buckets.
+function openBucket(name) {
+  // Open the buckets for the whole application lifecycle.
+  var bucket = cluster.openBucket(name);
+  bucket.on("error", err => {
+    if (err) {
+      console.error("Got error: %j", err);
+    }
+  });
+  bucket.on("connect", () => {
+    console.log("connected to bucket %s", name);
+  });
+  return bucket;
+}
 
-const getCluster = () => {
-  // Create new cluster that is connected to the DB.
-  const cluster = new couchbase.Cluster(process.env.COUCHBASE_HOST);
-  // Authenticate that cluster connection with the DB admin credentials.
-  cluster.authenticate(process.env.COUCHBASE_USER, process.env.COUCHBASE_PASS);
-  return cluster;
-};
+// Initialize all the Buckets.
+const CouchbaseBuckets = {};
+CouchbaseBuckets.UsersBucket = openBucket("users");
 
-module.exports = getCluster;
+module.exports = CouchbaseBuckets;
